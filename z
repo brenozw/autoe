@@ -769,10 +769,6 @@ keyMapping[autoEKey] = {
 
  keyPress = whenPressingAKey(keyMapping, window.ePerSecond);
 
-
-} else {
-    return 0;
-}
 function redefineFunction() {
 
  let autoE = keyPress();
