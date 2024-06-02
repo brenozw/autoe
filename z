@@ -1,0 +1,45 @@
+var key = 'KeyQ';
+
+var tx = document.createElement('div');
+tx.innerHTML = 'OFF';
+tx.style.color = 'red';
+tx.style.position = 'fixed';
+tx.style.backgroundColor = 'transparent';
+tx.style.userSelect = 'none';
+tx.style.right = '15%';
+tx.style.top = '20%';
+tx.style.transform = 'translate(0, -20%)';
+
+document.body.appendChild(tx);
+
+var h = false;
+
+function tm(tm) {
+  return new Promise(resolve => setTimeout(resolve, tm / 1000));
+}
+
+async function act() {
+    h = !h;
+
+     if (h) {
+        tx.style.color = 'green';
+        tx.innerHTML = 'ON';
+    } else {
+        tx.style.color = 'red';
+        tx.innerHTML = 'OFF';
+    }
+
+    while (h) {
+        var KeyISdown = new KeyboardEvent('keydown', { key: 'e', keyCode: 69, code: 'KeyE' });
+        window.dispatchEvent(KeyISdown);
+        await tm(0);
+        var keyISup = new KeyboardEvent('keyup', { key: 'e', keyCode: 69, code: 'KeyE' });
+        window.dispatchEvent(keyISup);
+    }
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.code === key) {
+        act();
+    }
+});
