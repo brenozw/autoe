@@ -771,7 +771,7 @@ keyMapping[autoEKey] = {
 
 
 } else {
-    return;
+    return 0;
 }
 function redefineFunction() {
 
