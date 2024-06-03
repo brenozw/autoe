@@ -1,2 +1,2 @@
-alert('here');
-window.acg875jffhsdjujskkfmgkjhsgatwjfdkgmbklfofdktkyngisisiauwawiiokkiovyopqewunfawfiufmvkskzazuunivdvdkiuzuniaiuaawaiodawi = true;
+var g = true;
+alert(g);
