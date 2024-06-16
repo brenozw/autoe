@@ -1,1 +1,17 @@
-
+fetch('https://sao-paulo-0-alpaca.dynast.cloud:8443/', {
+method: 'GET',
+headers: {
+Accept: 'application.vnd.dynast.io.v3+json',
+},
+})
+.then((response) => {
+console.log(typeof response)
+console.log(response)
+return response.json()
+})
+.then((data) => {
+console.log(`o nome do usuario e: ${data.name}`)
+})
+.catch((err) => {
+console.log(`houve um erro : ${err}`)
+})
