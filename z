@@ -10,8 +10,8 @@ console.log(response)
 return response.json()
 })
 .then((data) => {
-console.log(`o nome do usuario e: ${data.name}`)
+console.log(data)
 })
 .catch((err) => {
-console.log(`houve um erro : ${err}`)
+console.log(err)
 })
